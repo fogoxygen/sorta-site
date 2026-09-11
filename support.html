@@ -9,9 +9,11 @@
     :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif; }
     body { margin: 0; background: #f5f5f7; color: #111; }
     main { max-width: 760px; margin: 0 auto; padding: 40px 24px 72px; }
-    nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 44px; font-size: 15px; font-weight: 600; }
+    nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; font-size: 15px; font-weight: 600; }
     nav a { color: #424955; text-decoration: none; }
     nav a:hover, nav a:focus-visible, a:focus-visible { text-decoration: underline; }
+    .language-nav { display: flex; gap: 16px; margin: 0 0 44px; font-size: 14px; font-weight: 600; }
+    .language-nav a { color: #087fdf; text-decoration: none; }
     h1 { margin: 0 0 8px; font-size: 38px; letter-spacing: 0; }
     h2 { margin: 34px 0 10px; font-size: 22px; letter-spacing: 0; }
     h3 { margin: 22px 0 8px; font-size: 17px; }
@@ -20,12 +22,13 @@
     .lede { font-size: 18px; margin: 0; }
     .card { margin-top: 28px; padding: 24px; background: rgba(255, 255, 255, .9); border-radius: 18px; box-shadow: 0 8px 24px rgba(0, 0, 0, .06); }
     .card h2:first-child { margin-top: 0; }
-    .notice { padding: 16px 18px; border-radius: 14px; background: #eef5ff; color: #2b4e78; }
+    .language-divider { margin: 64px 0 48px; border: 0; border-top: 1px solid #d9dce1; }
     footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #d9dce1; color: #7b8492; font-size: 14px; }
     a { color: #087fdf; overflow-wrap: anywhere; }
     @media (max-width: 520px) {
       main { padding: 28px 18px 52px; }
-      nav { margin-bottom: 32px; }
+      nav { margin-bottom: 24px; }
+      .language-nav { margin-bottom: 32px; }
       h1 { font-size: 34px; }
       .card { padding: 20px; }
     }
@@ -38,83 +41,173 @@
       <a href="privacy.html">Privacy Policy</a>
     </nav>
 
-    <h1>Sorta Support</h1>
-    <p class="lede">A simple place to capture short notes, keep them organized, and see what matters today.</p>
+    <div class="language-nav" aria-label="Language">
+      <a href="#english">English</a>
+      <a href="#chinese">简体中文</a>
+    </div>
 
-    <section class="card" aria-labelledby="getting-started">
-      <h2 id="getting-started">Getting Started</h2>
-      <p>Keep notes short. Start with only the main content, such as “Buy milk,” “Meet tutor tomorrow,” or “Remember travel adapter.” Category, importance, time, reminders, place, and an additional note are optional. Sorta is designed to reduce form-filling, not add more of it.</p>
+    <section id="english" lang="en" aria-labelledby="support-en">
+      <h1 id="support-en">Sorta Support</h1>
+      <p class="lede">A simple place to capture short notes, keep them organized, and see what matters today.</p>
+
+      <section class="card" aria-labelledby="getting-started">
+        <h2 id="getting-started">Getting Started</h2>
+        <p>Keep notes short. Start with only the main content, such as “Buy milk,” “Meet tutor tomorrow,” or “Remember travel adapter.” Category, importance, time, reminders, place, and an additional note are optional. Sorta is designed to reduce form-filling, not add more of it.</p>
+      </section>
+
+      <section class="card" aria-labelledby="notes-organization">
+        <h2 id="notes-organization">Notes &amp; Organization</h2>
+        <p>Use categories and importance to keep related notes easy to find. Notes can be active, completed, or ended unfinished.</p>
+        <ul>
+          <li><strong>Complete</strong> marks a note as finished.</li>
+          <li><strong>End Unfinished</strong> closes a note without marking it complete.</li>
+          <li><strong>Restore</strong> returns an ended note to active status.</li>
+        </ul>
+        <p>Ending a note does not mean completing it.</p>
+      </section>
+
+      <section class="card" aria-labelledby="today">
+        <h2 id="today">Today</h2>
+        <p>Today may include overdue notes, reminders due today, scheduled notes, to-dos, alerts, daily notes, suggestions for today, and notes ended today. Importance can affect the order of notes within a Today section.</p>
+        <p>You can add an active note to Today manually. Today Suggestions can be turned off in Settings.</p>
+      </section>
+
+      <section class="card" aria-labelledby="time-reminders">
+        <h2 id="time-reminders">Time &amp; Reminders</h2>
+        <p>Sorta supports start and end times, all-day notes, repeating schedules, and reminders. Repeats can be daily, weekly, monthly, yearly, or custom, with an end date, occurrence count, or no end.</p>
+        <p>Reminders can be set from now or, when a note has a time, relative to that event, for example at the start, 30 minutes before, or one day before.</p>
+        <h3>Why did I not receive a reminder?</h3>
+        <ul>
+          <li>Check that Sorta has notification permission in iOS Settings.</li>
+          <li>Make sure the reminder is in the future and the note is still active.</li>
+          <li>Completing, ending, or deleting a note can cancel pending reminders.</li>
+          <li>Device settings and iOS system behavior can affect delivery.</li>
+        </ul>
+        <p>Sorta uses iOS local notifications. It does not create items in Apple Reminders, and reminders are not guaranteed for emergency, medical, legal, or safety-critical use.</p>
+      </section>
+
+      <section class="card" aria-labelledby="places">
+        <h2 id="places">Places</h2>
+        <p>You can type a place, search with Apple Maps, find nearby places, or save favorite places. Nearby Places is requested only when you choose to use it.</p>
+        <h3>Why can’t Sorta find nearby places?</h3>
+        <ul>
+          <li>Check Location permission in iOS Settings, then try again.</li>
+          <li>Nearby results depend on Apple Maps services.</li>
+          <li>Approximate Location is supported, but results may be less precise.</li>
+        </ul>
+      </section>
+
+      <section class="card" aria-labelledby="voice">
+        <h2 id="voice">Voice Input</h2>
+        <p>Voice Input is a beta feature. It needs Microphone and Speech Recognition permission. Sorta may try to structure the words you speak into a title, schedule, place, reminder, importance, and additional note. Please check the result before saving.</p>
+        <p>If Voice Input is not working, check those permissions in iOS Settings, reopen Voice Input, and try again. Speech recognition availability and processing depend on your device, language, iOS version, and Apple services.</p>
+      </section>
+
+      <section class="card" aria-labelledby="photos">
+        <h2 id="photos">Photos &amp; Camera</h2>
+        <p>You can take a photo or choose one through the system photo picker. Automatic image-based organization is currently limited beta functionality and is not generally available.</p>
+      </section>
+
+      <section class="card" aria-labelledby="ai">
+        <h2 id="ai">AI Features</h2>
+        <p>AI-related experiences are still evolving. AI Sort is coming soon. Current beta suggestions and structured demos may use local, rule-based, mock, or demo logic; Sorta does not currently operate a production third-party cloud AI workflow for your complete note database.</p>
+      </section>
+
+      <section class="card" aria-labelledby="permissions">
+        <h2 id="permissions">Privacy &amp; Permissions</h2>
+        <p>Sorta may request Notifications, Location, Microphone, Speech Recognition, or Camera permission only for features you choose to use. You can manage these permissions in iOS Settings &rarr; Sorta. Creating a note manually does not require these optional permissions.</p>
+      </section>
+
+      <section class="card" aria-labelledby="contact">
+        <h2 id="contact">Contact</h2>
+        <p>For support, bug reports, or privacy questions, contact the developer:</p>
+        <p><strong>Developer</strong><br>Yang Wu</p>
+        <p><strong>Email</strong><br><a href="mailto:fogoxygen@gmail.com">Contact the developer</a></p>
+        <p><a href="privacy.html">Read the Privacy Policy</a></p>
+      </section>
     </section>
 
-    <section class="card" aria-labelledby="notes-organization">
-      <h2 id="notes-organization">Notes &amp; Organization</h2>
-      <p>Use categories and importance to keep related notes easy to find. Notes can be active, completed, or ended unfinished.</p>
-      <ul>
-        <li><strong>Complete</strong> marks a note as finished.</li>
-        <li><strong>End Unfinished</strong> closes a note without marking it complete.</li>
-        <li><strong>Restore</strong> returns an ended note to active status.</li>
-      </ul>
-      <p>Ending a note does not mean completing it.</p>
-    </section>
+    <hr class="language-divider">
 
-    <section class="card" aria-labelledby="today">
-      <h2 id="today">Today</h2>
-      <p>Today may include overdue notes, reminders due today, scheduled notes, to-dos, alerts, daily notes, suggestions for today, and notes ended today. Importance can affect the order of notes within a Today section.</p>
-      <p>You can add an active note to Today manually. Today Suggestions can be turned off in Settings.</p>
-    </section>
+    <section id="chinese" lang="zh-Hans" aria-labelledby="support-zh">
+      <h1 id="support-zh">Sorta 支持</h1>
+      <p class="lede">一个用于快速记录短内容、清晰整理，并随时查看今天重点事项的简单空间。</p>
 
-    <section class="card" aria-labelledby="time-reminders">
-      <h2 id="time-reminders">Time &amp; Reminders</h2>
-      <p>Sorta supports start and end times, all-day notes, repeating schedules, and reminders. Repeats can be daily, weekly, monthly, yearly, or custom, with an end date, occurrence count, or no end.</p>
-      <p>Reminders can be set from now or, when a note has a time, relative to that event, for example at the start, 30 minutes before, or one day before.</p>
-      <h3>Why did I not receive a reminder?</h3>
-      <ul>
-        <li>Check that Sorta has notification permission in iOS Settings.</li>
-        <li>Make sure the reminder is in the future and the note is still active.</li>
-        <li>Completing, ending, or deleting a note can cancel pending reminders.</li>
-        <li>Device settings and iOS system behavior can affect delivery.</li>
-      </ul>
-      <p>Sorta uses iOS local notifications. It does not create items in Apple Reminders, and reminders are not guaranteed for emergency, medical, legal, or safety-critical use.</p>
-    </section>
+      <section class="card" aria-labelledby="getting-started-zh">
+        <h2 id="getting-started-zh">开始使用</h2>
+        <p>尽量让记录保持简短。你只需要输入主要内容，例如“买牛奶”、“明天见导师”或“记得带旅行转换器”。分类、重要性、时间、提醒、地点和备注都是可选的。Sorta 希望减少填写表单的负担，而不是增加更多步骤。</p>
+      </section>
 
-    <section class="card" aria-labelledby="places">
-      <h2 id="places">Places</h2>
-      <p>You can type a place, search with Apple Maps, find nearby places, or save favorite places. Nearby Places is requested only when you choose to use it.</p>
-      <h3>Why can’t Sorta find nearby places?</h3>
-      <ul>
-        <li>Check Location permission in iOS Settings, then try again.</li>
-        <li>Nearby results depend on Apple Maps services.</li>
-        <li>Approximate Location is supported, but results may be less precise.</li>
-      </ul>
-    </section>
+      <section class="card" aria-labelledby="notes-organization-zh">
+        <h2 id="notes-organization-zh">笔记与整理</h2>
+        <p>使用分类和重要性，让相关的短记录更容易找到。记录可以处于进行中、已完成或已结束未完成状态。</p>
+        <ul>
+          <li><strong>完成</strong>会将记录标记为已完成。</li>
+          <li><strong>结束（未完成）</strong>会关闭记录，但不会将它标记为完成。</li>
+          <li><strong>恢复</strong>会将已结束的记录恢复为进行中。</li>
+        </ul>
+        <p>结束一条记录并不等于完成它。</p>
+      </section>
 
-    <section class="card" aria-labelledby="voice">
-      <h2 id="voice">Voice Input</h2>
-      <p>Voice Input is a beta feature. It needs Microphone and Speech Recognition permission. Sorta may try to structure the words you speak into a title, schedule, place, reminder, importance, and additional note. Please check the result before saving.</p>
-      <p>If Voice Input is not working, check those permissions in iOS Settings, reopen Voice Input, and try again. Speech recognition availability and processing depend on your device, language, iOS version, and Apple services.</p>
-    </section>
+      <section class="card" aria-labelledby="today-zh">
+        <h2 id="today-zh">今日</h2>
+        <p>“今日”可能会显示逾期记录、今天的提醒、已设置时间的记录、待办、警示、日常记录、今日推荐，以及今天结束的记录。重要性会影响记录在“今日”各个区块内的排序。</p>
+        <p>你也可以手动将进行中的记录加入“今日”。可在设置中关闭“今日推荐”。</p>
+      </section>
 
-    <section class="card" aria-labelledby="photos">
-      <h2 id="photos">Photos &amp; Camera</h2>
-      <p>You can take a photo or choose one through the system photo picker. Automatic image-based organization is currently limited beta functionality and is not generally available.</p>
-    </section>
+      <section class="card" aria-labelledby="time-reminders-zh">
+        <h2 id="time-reminders-zh">时间与提醒</h2>
+        <p>Sorta 支持开始和结束时间、全天记录、重复安排和提醒。重复可以设为每天、每周、每月、每年或自定义，并可设置结束日期、发生次数，或不设结束。</p>
+        <p>提醒可以从当前时间开始设置；如果记录设有时间，也可以相对于该时间设置，例如开始时、提前 30 分钟或提前一天。</p>
+        <h3>为什么没有收到提醒？</h3>
+        <ul>
+          <li>请在 iOS 设置中确认 Sorta 已获得通知权限。</li>
+          <li>确认提醒时间仍在未来，且记录仍为进行中。</li>
+          <li>完成、结束或删除记录可能会取消尚未触发的提醒。</li>
+          <li>设备设置和 iOS 系统行为都可能影响提醒送达。</li>
+        </ul>
+        <p>Sorta 使用 iOS 本地通知，不会在 Apple Reminders 中创建项目。提醒不适用于紧急、医疗、法律或其他安全关键用途。</p>
+      </section>
 
-    <section class="card" aria-labelledby="ai">
-      <h2 id="ai">AI Features</h2>
-      <p>AI-related experiences are still evolving. AI Sort is coming soon. Current beta suggestions and structured demos may use local, rule-based, mock, or demo logic; Sorta does not currently operate a production third-party cloud AI workflow for your complete note database.</p>
-    </section>
+      <section class="card" aria-labelledby="places-zh">
+        <h2 id="places-zh">地点</h2>
+        <p>你可以手动输入地点、使用 Apple 地图搜索、查找附近地点，或收藏常用地点。“附近地点”只会在你主动使用该功能时请求位置。</p>
+        <h3>为什么无法找到附近地点？</h3>
+        <ul>
+          <li>请在 iOS 设置中检查位置权限，然后再次尝试。</li>
+          <li>附近地点结果依赖 Apple 地图服务。</li>
+          <li>支持大致位置，但结果可能不够精确。</li>
+        </ul>
+      </section>
 
-    <section class="card" aria-labelledby="permissions">
-      <h2 id="permissions">Privacy &amp; Permissions</h2>
-      <p>Sorta may request Notifications, Location, Microphone, Speech Recognition, or Camera permission only for features you choose to use. You can manage these permissions in iOS Settings &rarr; Sorta. Creating a note manually does not require these optional permissions.</p>
-    </section>
+      <section class="card" aria-labelledby="voice-zh">
+        <h2 id="voice-zh">语音输入</h2>
+        <p>语音输入目前是 Beta 功能，需要麦克风和语音识别权限。Sorta 可能会尝试将你说的内容整理为标题、时间安排、地点、提醒、重要性和备注。保存前请检查结果。</p>
+        <p>若语音输入无法使用，请在 iOS 设置中检查相关权限，重新打开语音输入后再试。语音识别是否可用以及处理方式取决于设备、语言、iOS 版本和 Apple 服务。</p>
+      </section>
 
-    <section class="card" aria-labelledby="contact">
-      <h2 id="contact">Contact</h2>
-      <p>For support, bug reports, or privacy questions, contact the developer:</p>
-      <p><strong>Developer</strong><br>Yang Wu</p>
-      <p><strong>Email</strong><br><a href="mailto:fogoxygen@gmail.com">Contact the developer</a></p>
-      <p><a href="privacy.html">Read the Privacy Policy</a></p>
+      <section class="card" aria-labelledby="photos-zh">
+        <h2 id="photos-zh">照片与相机</h2>
+        <p>你可以拍照，或通过系统照片选择器选择照片。自动根据图片整理内容目前属于有限的 Beta 功能，尚未全面开放。</p>
+      </section>
+
+      <section class="card" aria-labelledby="ai-zh">
+        <h2 id="ai-zh">AI 功能</h2>
+        <p>与 AI 相关的体验仍在不断完善中。AI 整理即将推出。当前 Beta 建议和结构化演示可能使用本地、规则、模拟或演示逻辑；Sorta 目前不会为你的完整笔记数据库运行生产环境的第三方云端 AI 工作流。</p>
+      </section>
+
+      <section class="card" aria-labelledby="permissions-zh">
+        <h2 id="permissions-zh">隐私与权限</h2>
+        <p>Sorta 只会在你主动使用相关功能时请求通知、位置、麦克风、语音识别或相机权限。你可以在 iOS 设置 &rarr; Sorta 中管理这些权限。手动创建记录不需要这些可选权限。</p>
+      </section>
+
+      <section class="card" aria-labelledby="contact-zh">
+        <h2 id="contact-zh">联系开发者</h2>
+        <p>如需支持、提交问题反馈或咨询隐私相关问题，请联系开发者：</p>
+        <p><strong>开发者</strong><br>Yang Wu</p>
+        <p><strong>邮箱</strong><br><a href="mailto:fogoxygen@gmail.com">联系开发者</a></p>
+        <p><a href="privacy.html#chinese">阅读隐私政策</a></p>
+      </section>
     </section>
 
     <footer>Sorta Support</footer>
