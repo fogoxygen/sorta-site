@@ -4,25 +4,120 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sorta Support</title>
+  <meta name="description" content="Support for Sorta, including notes, reminders, voice input, places, permissions, and troubleshooting.">
   <style>
     :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif; }
     body { margin: 0; background: #f5f5f7; color: #111; }
-    main { max-width: 680px; margin: 0 auto; padding: 56px 24px; }
-    h1 { font-size: 38px; }
-    p { color: #424955; line-height: 1.7; }
-    .box { background: #fff; padding: 24px; border-radius: 18px; box-shadow: 0 8px 24px rgba(0,0,0,.06); }
-    a { color: #087fdf; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 24px 72px; }
+    nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 44px; font-size: 15px; font-weight: 600; }
+    nav a { color: #424955; text-decoration: none; }
+    nav a:hover, nav a:focus-visible, a:focus-visible { text-decoration: underline; }
+    h1 { margin: 0 0 8px; font-size: 38px; letter-spacing: 0; }
+    h2 { margin: 34px 0 10px; font-size: 22px; letter-spacing: 0; }
+    h3 { margin: 22px 0 8px; font-size: 17px; }
+    p, li { color: #424955; line-height: 1.7; }
+    ul { margin: 10px 0; padding-left: 22px; }
+    .lede { font-size: 18px; margin: 0; }
+    .card { margin-top: 28px; padding: 24px; background: rgba(255, 255, 255, .9); border-radius: 18px; box-shadow: 0 8px 24px rgba(0, 0, 0, .06); }
+    .card h2:first-child { margin-top: 0; }
+    .notice { padding: 16px 18px; border-radius: 14px; background: #eef5ff; color: #2b4e78; }
+    footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #d9dce1; color: #7b8492; font-size: 14px; }
+    a { color: #087fdf; overflow-wrap: anywhere; }
+    @media (max-width: 520px) {
+      main { padding: 28px 18px 52px; }
+      nav { margin-bottom: 32px; }
+      h1 { font-size: 34px; }
+      .card { padding: 20px; }
+    }
   </style>
 </head>
 <body>
   <main>
+    <nav aria-label="Site navigation">
+      <a href="index.html">Sorta</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </nav>
+
     <h1>Sorta Support</h1>
-    <div class="box">
-      <p>For help, feedback, privacy questions, or bug reports, email:</p>
-      <p><a href="mailto:fogoxygen@gmail.com">fogoxygen@gmail.com</a></p>
-      <p>Sorta is currently in beta. Please include your device model, iOS version, and a short description of the issue when reporting a problem.</p>
-    </div>
-    <p><a href="privacy.html">Privacy Policy</a></p>
+    <p class="lede">A simple place to capture short notes, keep them organized, and see what matters today.</p>
+
+    <section class="card" aria-labelledby="getting-started">
+      <h2 id="getting-started">Getting Started</h2>
+      <p>Keep notes short. Start with only the main content, such as “Buy milk,” “Meet tutor tomorrow,” or “Remember travel adapter.” Category, importance, time, reminders, place, and an additional note are optional. Sorta is designed to reduce form-filling, not add more of it.</p>
+    </section>
+
+    <section class="card" aria-labelledby="notes-organization">
+      <h2 id="notes-organization">Notes &amp; Organization</h2>
+      <p>Use categories and importance to keep related notes easy to find. Notes can be active, completed, or ended unfinished.</p>
+      <ul>
+        <li><strong>Complete</strong> marks a note as finished.</li>
+        <li><strong>End Unfinished</strong> closes a note without marking it complete.</li>
+        <li><strong>Restore</strong> returns an ended note to active status.</li>
+      </ul>
+      <p>Ending a note does not mean completing it.</p>
+    </section>
+
+    <section class="card" aria-labelledby="today">
+      <h2 id="today">Today</h2>
+      <p>Today may include overdue notes, reminders due today, scheduled notes, to-dos, alerts, daily notes, suggestions for today, and notes ended today. Importance can affect the order of notes within a Today section.</p>
+      <p>You can add an active note to Today manually. Today Suggestions can be turned off in Settings.</p>
+    </section>
+
+    <section class="card" aria-labelledby="time-reminders">
+      <h2 id="time-reminders">Time &amp; Reminders</h2>
+      <p>Sorta supports start and end times, all-day notes, repeating schedules, and reminders. Repeats can be daily, weekly, monthly, yearly, or custom, with an end date, occurrence count, or no end.</p>
+      <p>Reminders can be set from now or, when a note has a time, relative to that event, for example at the start, 30 minutes before, or one day before.</p>
+      <h3>Why did I not receive a reminder?</h3>
+      <ul>
+        <li>Check that Sorta has notification permission in iOS Settings.</li>
+        <li>Make sure the reminder is in the future and the note is still active.</li>
+        <li>Completing, ending, or deleting a note can cancel pending reminders.</li>
+        <li>Device settings and iOS system behavior can affect delivery.</li>
+      </ul>
+      <p>Sorta uses iOS local notifications. It does not create items in Apple Reminders, and reminders are not guaranteed for emergency, medical, legal, or safety-critical use.</p>
+    </section>
+
+    <section class="card" aria-labelledby="places">
+      <h2 id="places">Places</h2>
+      <p>You can type a place, search with Apple Maps, find nearby places, or save favorite places. Nearby Places is requested only when you choose to use it.</p>
+      <h3>Why can’t Sorta find nearby places?</h3>
+      <ul>
+        <li>Check Location permission in iOS Settings, then try again.</li>
+        <li>Nearby results depend on Apple Maps services.</li>
+        <li>Approximate Location is supported, but results may be less precise.</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="voice">
+      <h2 id="voice">Voice Input</h2>
+      <p>Voice Input is a beta feature. It needs Microphone and Speech Recognition permission. Sorta may try to structure the words you speak into a title, schedule, place, reminder, importance, and additional note. Please check the result before saving.</p>
+      <p>If Voice Input is not working, check those permissions in iOS Settings, reopen Voice Input, and try again. Speech recognition availability and processing depend on your device, language, iOS version, and Apple services.</p>
+    </section>
+
+    <section class="card" aria-labelledby="photos">
+      <h2 id="photos">Photos &amp; Camera</h2>
+      <p>You can take a photo or choose one through the system photo picker. Automatic image-based organization is currently limited beta functionality and is not generally available.</p>
+    </section>
+
+    <section class="card" aria-labelledby="ai">
+      <h2 id="ai">AI Features</h2>
+      <p>AI-related experiences are still evolving. AI Sort is coming soon. Current beta suggestions and structured demos may use local, rule-based, mock, or demo logic; Sorta does not currently operate a production third-party cloud AI workflow for your complete note database.</p>
+    </section>
+
+    <section class="card" aria-labelledby="permissions">
+      <h2 id="permissions">Privacy &amp; Permissions</h2>
+      <p>Sorta may request Notifications, Location, Microphone, Speech Recognition, or Camera permission only for features you choose to use. You can manage these permissions in iOS Settings &rarr; Sorta. Creating a note manually does not require these optional permissions.</p>
+    </section>
+
+    <section class="card" aria-labelledby="contact">
+      <h2 id="contact">Contact</h2>
+      <p>For support, bug reports, or privacy questions, contact the developer:</p>
+      <p><strong>Developer</strong><br>Yang Wu</p>
+      <p><strong>Email</strong><br><a href="mailto:fogoxygen@gmail.com">Contact the developer</a></p>
+      <p><a href="privacy.html">Read the Privacy Policy</a></p>
+    </section>
+
+    <footer>Sorta Support</footer>
   </main>
 </body>
 </html>
